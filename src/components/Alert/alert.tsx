@@ -35,11 +35,11 @@ const Alert: React.FC<AlertProps> = props => {
     }
 
     return (
-        <div className='popular-alert' {...restProps}>
+        <div className='popular-alert' data-testid="test-alert" {...restProps}>
             {
-                isBg ? <div className='popular-alert-bg' /> : null
+                isBg ? <div className='popular-alert-bg' title='test-bg' /> : null
             }
-            <div className={classes}>
+            <div className={classes} title='test-content'>
                 {
                     title ? <div className='popular-alert-title'>{title}</div> : null
                 }
