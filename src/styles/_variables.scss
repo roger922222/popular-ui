@@ -20,6 +20,7 @@ $yellow: #fadb14 !default;
 $green: #52c41c !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
+$error: #fffbe6 !default;
 
 $primary: $blue !default;
 $secondary: $gray-600 !default;
@@ -29,6 +30,7 @@ $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
+
 
 $theme-colors: 
 (
@@ -40,6 +42,14 @@ $theme-colors:
     "danger": $danger,
     "light": $light,
     "dark": $dark
+);
+
+$type-colors:
+(
+    "success": #f6ffed,
+    "info": #e6f7ff,
+    "warning": #fffbe6,
+    "error": #fff2f0
 );
 
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;

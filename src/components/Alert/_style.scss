@@ -1,0 +1,62 @@
+.popular-alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 90;
+
+    .popular-alert-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+        z-index: 10;
+    }
+
+    .popular-alert-model {
+        position: relative;
+        padding: 20px 40px;
+        border-radius: 4px;
+        z-index: 20;
+    }
+
+    .alert-web {
+        box-sizing: border-box;
+        width: 80%;
+    }
+
+    .popular-alert-btn {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 30px;
+    }
+}
+
+@each $key, $value in $type-colors {
+    .alert-#{$key} {
+        background: $value;
+        @if $key == 'success' { border: 1px solid #b7eb8f; }
+        @if $key == 'info' { border: 1px solid #91d5ff; }
+        @if $key == 'warning' { border: 1px solid #ffe58f; }
+        @if $key == 'error' { border: 1px solid #ffccc7; }
+
+        .popular-alert-title {
+            margin-bottom: 4px;
+            font-size: 16px;
+            color: rgba(0, 0, 0, .85)
+        }
+
+        .popular-alert-text {
+            font-size: 14px;
+            color: rgba(0, 0, 0, .85)
+        }
+
+    }
+}

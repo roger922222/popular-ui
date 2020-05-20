@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import Button, { ButtonType, ButtonSize } from './components/Button/button'
@@ -6,10 +6,24 @@ import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu'
 import Icon from './components/Icon/icon'
+import Alert from './components/Alert/alert'
 
 library.add(fas)
 
-function App() {
+export interface AppProps {}
+
+const App: React.FC<AppProps> = props => {
+
+  const [ showAlert, setShowAlert ] = useState(false)
+
+  const ok = () => {
+    setShowAlert(false)
+  }
+
+  const cancel = () => {
+    setShowAlert(false)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -33,7 +47,7 @@ function App() {
             cool link 4
           </MenuItem>
         </Menu>
-        <Button onClick={e => alert(e.target)}>hello</Button>
+        <Button onClick={e => setShowAlert(true)}>hello</Button>
         <Button disabled>disabled button</Button>
         <Button size={ButtonSize.Large}>large button</Button>
         <Button size={ButtonSize.Small}>small button</Button>
@@ -55,6 +69,17 @@ function App() {
           Learn React
         </a>
       </header>
+      {
+          showAlert ? <Alert
+            title='跨越速运'
+            text='首次寄递，全程免费' 
+            type='success'
+            textOk='确定'
+            textCancel='取消'
+            ok={ok}
+            cancel={cancel}
+          /> : null
+        }
     </div>
   );
 }

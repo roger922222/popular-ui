@@ -21,7 +21,8 @@ interface BaseButtonProps {
     size?: ButtonSize;
     btnType?: ButtonType;
     children: React.ReactNode; 
-    href?: string
+    href?: string;
+    style?: React.CSSProperties
 }
 
 // 拿到所有button元素的属性 React.ButtonHTMLAttributes<HTMLElement> 不能通过联合类型去组合 |
