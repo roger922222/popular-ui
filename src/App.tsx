@@ -29,10 +29,10 @@ const App: React.FC<AppProps> = props => {
   return (
     <div className="App">
       <header className="App-header">
-        <Tabs>
-          <TabsItem>tabs 1</TabsItem>
-          <TabsItem>tabs 2</TabsItem>
-          <TabsItem>tabs 3</TabsItem>
+        <Tabs onSelect={index => alert(index)}>
+          <TabsItem tabs='tabs 1'>this is a content1</TabsItem>
+          <TabsItem tabs='tabs 2' disabled>this is a content2</TabsItem>
+          <TabsItem tabs='tabs 3'>this is a content3</TabsItem>
         </Tabs>
         <Icon icon='arrow-down' theme='primary' size='10x' />
         <Menu defaultIndex='0' onSelect={index => alert(index)} mode='horizontal' defaultOpenSubMenus={['2']}>

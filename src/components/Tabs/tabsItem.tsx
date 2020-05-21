@@ -6,7 +6,8 @@ export interface TabsItemProps {
     disabled?: boolean;
     className?: string;
     style?: React.CSSProperties;
-    index?: number
+    index?: number;
+    tabs: React.ReactNode
 }
 
 const TabsItem: React.FC<TabsItemProps> = props => {
@@ -32,7 +33,7 @@ const TabsItem: React.FC<TabsItemProps> = props => {
     }
 
     return (
-        <li 
+        <li
             className={classes}
             style={style}
             onClick={handleClick}

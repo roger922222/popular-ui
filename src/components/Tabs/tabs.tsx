@@ -56,14 +56,9 @@ const Tabs: React.FC<TabsProps> = props => {
     }
 
     return (
-        <ul
-            className={classes}
-            style={style}
-        >
-            <TabsContext.Provider value={passedContext}>
-                {renderChildren()}
-            </TabsContext.Provider>
-        </ul>
+        <div>
+            
+        </div>
     )
 }
 
