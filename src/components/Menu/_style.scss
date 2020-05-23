@@ -74,6 +74,25 @@
       .popular-submenu.menu-opened {
         display: block;
       }
+
+      .zoom-in-toop-enter {
+        opacity: 0;
+      }
+
+      .zoom-in-toop-enter-active {
+        opacity: 1;
+        transition: opacity .5s ease-in;
+      }
+
+      .zoom-in-toop-exit {
+        opacity: 1;
+      }
+
+      .zoom-in-toop-exit-active {
+        opacity: 0;
+        transition: opacity .5s ease-out;
+      }
+
       .popular-submenu-horizontal {
         position: absolute;
         top: 50px;
