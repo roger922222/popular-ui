@@ -1,6 +1,23 @@
 import React from 'react'
 import { render } from '@testing-library/react' 
-import Button from './button'
+import Button, { ButtonProps } from './button'
+
+const defaultProps = {
+    onClick: jest.fn()
+}
+
+const testProps: ButtonProps = {
+    btnType: 'primary',
+    size: 'lg',
+    className: 'klass'
+}
+
+const disabledProps: ButtonProps = {
+    disabled: true,
+    onClick: jest.fn()
+}
+
+
 
 test('our first react test case', () => {
     const wrapper = render(<Button>Nice</Button>)
