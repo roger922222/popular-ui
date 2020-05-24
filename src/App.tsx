@@ -102,6 +102,7 @@ const App: React.FC<AppProps> = props => {
           in={show}
           timeout={300}
           animation='zoom-in-left'
+          wrapper
         >
           <Button btnType='primary' size='lg'> A Large Button </Button>
         </Transition>
