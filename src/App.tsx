@@ -9,6 +9,7 @@ import Icon from './components/Icon/icon'
 import Alert from './components/Alert/alert'
 import Tabs from './components/Tabs/tabs'
 import TabsItem from './components/Tabs/tabsItem'
+import Transition from './components/Transition/transition'
 
 library.add(fas)
 
@@ -17,6 +18,8 @@ export interface AppProps {}
 const App: React.FC<AppProps> = props => {
 
   const [ showAlert, setShowAlert ] = useState(false)
+
+  const [ show, setShow ] = useState(false)
 
   const ok = () => {
     setShowAlert(false)
@@ -75,17 +78,33 @@ const App: React.FC<AppProps> = props => {
         <Button btnType='default' >default</Button>
         <Button btnType='link' href='http://www.baidu.com' target="_blank">baidu</Button>
         <Button btnType='link' disabled >button disabled</Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Button size='lg' onClick={() => setShow(!show)}> Toggle </Button>
+        <Transition
+          in={show}
+          timeout={300}
+          animation='zoom-in-left'
         >
-          Learn React
-        </a>
+          <div>
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload.
+            </p>
+            <a
+              className="App-link"
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn React
+            </a>
+            </div>
+        </Transition>
+        <Transition
+          in={show}
+          timeout={300}
+          animation='zoom-in-left'
+        >
+          <Button btnType='primary' size='lg'> A Large Button </Button>
+        </Transition>
       </header>
       {
           showAlert ? <Alert

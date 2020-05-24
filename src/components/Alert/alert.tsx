@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import Button, { ButtonType } from '../Button/button'
+import Button from '../Button/button'
 
 export type alertType = 'success' | 'info' | 'warning' | 'error'
 
@@ -48,7 +48,7 @@ const Alert: React.FC<AlertProps> = props => {
                 }
                 {
                     textOk ? <div className='popular-alert-btn'>
-                        {textOk ? <Button className='popular-alert-left' style={style} btnType={ButtonType.Primary} onClick={handleOk}>{textOk}</Button> : ''}
+                        {textOk ? <Button className='popular-alert-left' style={style} btnType='primary' onClick={handleOk}>{textOk}</Button> : ''}
                         {textCancel ? <Button className='popular-alert-right' style={style} onClick={handleCancel}>{textCancel}</Button> : ''}
                 </div> : null}
             </div>
