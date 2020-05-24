@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import Button, { ButtonType, ButtonSize } from './components/Button/button'
+import Button from './components/Button/button'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu'
@@ -49,14 +49,14 @@ const App: React.FC<AppProps> = props => {
         </Menu>
         <Button onClick={e => setShowAlert(true)}>hello</Button>
         <Button disabled>disabled button</Button>
-        <Button size={ButtonSize.Large}>large button</Button>
-        <Button size={ButtonSize.Small}>small button</Button>
+        <Button size='lg'>large button</Button>
+        <Button size='sm'>small button</Button>
         <Button disabled>hello</Button>
-        <Button btnType={ButtonType.Primary} >primary</Button>
-        <Button btnType={ButtonType.Danger} >danger</Button>
-        <Button btnType={ButtonType.Default} >default</Button>
-        <Button btnType={ButtonType.Link} href='http://www.baidu.com' target="_blank">baidu</Button>
-        <Button btnType={ButtonType.Link} disabled >button disabled</Button>
+        <Button btnType='primary' >primary</Button>
+        <Button btnType='danger' >danger</Button>
+        <Button btnType='default' >default</Button>
+        <Button btnType='link' href='http://www.baidu.com' target="_blank">baidu</Button>
+        <Button btnType='link' disabled >button disabled</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
