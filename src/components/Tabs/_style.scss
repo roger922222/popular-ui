@@ -1,0 +1,39 @@
+.popular-tabs {
+
+    .popular-tabs-title {
+        display: flex;
+
+        .tabs-item {
+            padding: $menu-item-padding-y $menu-item-padding-x;
+            color: $tabs-item-color;
+            cursor: pointer;
+
+            &.is-active, &:hover {
+                border-bottom: $tabs-item-active-border-width solid $tabs-item-active-color;
+                color: $tabs-item-active-color;
+            }
+
+            &.is-disabled {
+                color: $tabs-item-disabled-color;
+                cursor: default;
+                pointer-events: none;
+            }
+
+        }
+    }
+
+    .popular-tabs-content {
+        display: flex;
+        flex-wrap: nowrap;
+
+        .popular-tabs-content-child {
+            display: none;
+            width: 100%;
+        }
+
+        .tabs-content-child-is-active {
+            display: block;
+        }
+
+    }
+}

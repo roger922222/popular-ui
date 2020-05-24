@@ -7,6 +7,8 @@ import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu'
 import Icon from './components/Icon/icon'
 import Alert from './components/Alert/alert'
+import Tabs from './components/Tabs/tabs'
+import TabsItem from './components/Tabs/tabsItem'
 
 library.add(fas)
 
@@ -24,9 +26,25 @@ const App: React.FC<AppProps> = props => {
     setShowAlert(false)
   }
 
+  const tabs = () => {
+    return <div>
+      1234
+    </div>
+  }
+
   return (
     <div className="App">
       <header className="App-header">
+        <Tabs onSelect={index => alert(index)} defaultIndex={0}>
+          <TabsItem tabs={tabs()}>
+              <div>
+                <div>1234</div>
+                <div>5678</div>
+              </div>
+          </TabsItem>
+          <TabsItem tabs='tabs 2' disabled>this is a content2</TabsItem>
+          <TabsItem tabs='tabs 3'>this is a content3</TabsItem>
+        </Tabs>
         <Icon icon='arrow-down' theme='primary' size='10x' />
         <Menu defaultIndex='0' onSelect={index => alert(index)} mode='horizontal' defaultOpenSubMenus={['2']}>
           <MenuItem >
