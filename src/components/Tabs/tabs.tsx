@@ -41,9 +41,25 @@ const Tabs: React.FC<TabsProps> = props => {
         onSelect: handleClick
     }
 
-    const classes = classNames('popular-tabs', className, {})
+    const classes = (index: number) => {
+        return classNames('popular-tabs-content-child', className, {
+            'tabs-content-child-is-active': currentActive === index
+                })
+    }
 
-    const renderChildren = () => {
+    const renderChildrenContent = () => {
+        return React.Children.map(children, (child, index) => {
+            const childElement = child as React.FunctionComponentElement<TabsItemProps>
+            const { displayName } = childElement.type
+            if (displayName === 'TabsItem') {
+                return React.cloneElement(<li className={classes(index)}>{childElement.props.children}</li>, {
+                    index
+                })
+            }
+        })
+    }
+
+    const renderChildrenTabs = () => {
         return React.Children.map(children, (child, index) => {
             const childElement = child as React.FunctionComponentElement<TabsItemProps>
             const { displayName } = childElement.type
@@ -56,8 +72,15 @@ const Tabs: React.FC<TabsProps> = props => {
     }
 
     return (
-        <div>
-            
+        <div className='popular-tabs' style={style}>
+            <TabsContext.Provider value={passedContext}>
+                <ul className='popular-tabs-title'>
+                    {renderChildrenTabs()}
+                </ul>
+                <ul className='popular-tabs-content'>
+                    {renderChildrenContent()}   
+                </ul>
+            </TabsContext.Provider>
         </div>
     )
 }

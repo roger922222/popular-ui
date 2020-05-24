@@ -7,7 +7,8 @@ export interface TabsItemProps {
     className?: string;
     style?: React.CSSProperties;
     index?: number;
-    tabs: React.ReactNode
+    tabs: React.ReactNode,
+    children?: React.ReactNode
 }
 
 const TabsItem: React.FC<TabsItemProps> = props => {
@@ -16,7 +17,7 @@ const TabsItem: React.FC<TabsItemProps> = props => {
         className,
         style,
         index,
-        children
+        tabs
     } = props
 
     const context = useContext(TabsContext)
@@ -38,7 +39,7 @@ const TabsItem: React.FC<TabsItemProps> = props => {
             style={style}
             onClick={handleClick}
         >
-            {children}
+            {tabs}
         </li>
     )
 
